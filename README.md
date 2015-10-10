@@ -81,7 +81,7 @@ Also you can get a specific version of Yocto Project:
 
 For example,
 
-    $ repo init -u git://github.com/neutrino-hd/yocto-manifest.git -b refs/tags/fido
+    $ repo init -u git://github.com/neutrino-hd/yocto-manifest.git -b fido
     
 To learn more about repo, look at http://source.android.com/source/version-control.html 
 ***
