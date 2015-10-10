@@ -1,23 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <!-- You can have as many remote repositories as you like -->
-  <remote fetch="git://github.com/bmwcarit" name="bmwcarit"/>
-  <remote fetch="git://github.com/gumstix" name="gumstix"/>
+  <remote fetch="git://github.com" name="neutrino-hd"/>
   <remote fetch="git://git.openembedded.org" name="oe"/>
   <remote fetch="git://git.yoctoproject.org" name="yocto"/>
 
-  <default remote="gumstix" revision="default"/>
+  <default remote="neutrino-hd" revision="default"/>
   <!-- List all the repositories you want to fetch -->
   <!-- "name": git repository's name on hosting server
        "remote": the remote host from above (if not the default)
        "revision": commitish to checkout (if not the default)
        "path": directory where git repository gets cloned/synced -->
-  <project name="meta-gumstix" path="poky/meta-gumstix" revision="68e4b5771aef2d11fcf04bb8759fecd409de1ac3" upstream="refs/heads/fido"/>
-  <project name="meta-gumstix-extras" path="poky/meta-gumstix-extras" revision="0ee78d47ff3082000e9e087b1ec0d56df13457d9" upstream="refs/heads/fido"/>
-  <project name="meta-java" path="poky/meta-java" remote="yocto" revision="66c97ae7461f4c1a13917131787bb76dc34e6b6f" upstream="refs/heads/master"/>
-  <project name="meta-openembedded" path="poky/meta-openembedded" remote="oe" revision="10d3c8f85280a0bf867a8e4f84bcda81c290d28e" upstream="refs/heads/fido"/>
-  <project name="meta-ros" path="poky/meta-ros" remote="bmwcarit" revision="d465a23c0a96e651419d46b29ab7c0c3663da314" upstream="refs/heads/master"/>
-  <project name="meta-ti" path="poky/meta-ti" remote="yocto" revision="03cb3ff15f3b8535ca409ce682f44ec1b81da0c3" upstream="refs/heads/fido"/>
-  <project name="poky" remote="yocto" revision="83aa565d93aacae484976562ef1ae8dbbb6b2bc0" upstream="refs/heads/fido"/>
+  <project name="meta-neutrino" path="poky/meta-neutrino" revision="a2e55afddc81d8e513294b45c30ceb1da224f242" upstream="refs/heads/jethro"/>
+  <project name="meta-coolstream" path="poky/meta-coolstream" revision="793e1efa2ed367869fcf5f06fe24e275181cef40" upstream="refs/heads/jethro"/>
+  <project name="poky" remote="yocto" revision="ceeb52a2544045fe8432e36307a321f6e934de49" upstream="refs/heads/jethro"/>
 </manifest>
 
