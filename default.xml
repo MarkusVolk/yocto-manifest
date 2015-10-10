@@ -12,7 +12,7 @@
        "revision": commitish to checkout (if not the default)
        "path": directory where git repository gets cloned/synced -->
   <project name="meta-neutrino" path="poky/meta-neutrino" revision="a2e55afddc81d8e513294b45c30ceb1da224f242" upstream="refs/heads/jethro"/>
-  <project name="meta-coolstream" path="poky/meta-coolstream" revision="793e1efa2ed367869fcf5f06fe24e275181cef40" upstream="refs/heads/jethro"/>
+  <project name="meta-coolstream" path="poky/meta-coolstream" revision="f90f7ba9aee4d86e51744b76b5d0dddf41da3d1b" upstream="refs/heads/jethro"/>
   <project name="poky" remote="yocto" revision="ceeb52a2544045fe8432e36307a321f6e934de49" upstream="refs/heads/jethro"/>
 </manifest>
 
