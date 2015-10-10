@@ -1,27 +1,20 @@
+  GNU nano 2.2.6                                    Datei: default.xml                                                                               
+
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <default remote="gumstix" revision="default" />
-
   <!-- You can have as many remote repositories as you like -->
-  <remote name="gumstix" fetch="git://github.com/gumstix" />
-  <remote name="yocto" fetch="git://git.yoctoproject.org" />
-  <remote name="oe" fetch="git://git.openembedded.org" />
-  <remote name="bmwcarit" fetch="git://github.com/bmwcarit" />
-  <remote name="qt5" fetch="git://github.com/meta-qt5" />
+  <remote fetch="git://github.com/neutrino-hd" name="neutrino-hd"/>
+  <remote fetch="git://git.openembedded.org" name="oe"/>
+  <remote fetch="git://git.yoctoproject.org" name="yocto"/>
 
+  <default remote="neutrino-hd" revision="default"/>
   <!-- List all the repositories you want to fetch -->
   <!-- "name": git repository's name on hosting server
        "remote": the remote host from above (if not the default)
        "revision": commitish to checkout (if not the default)
        "path": directory where git repository gets cloned/synced -->
-  <project name="poky" revision="refs/heads/fido" remote="yocto" />
-  <project name="meta-openembedded" revision="refs/heads/fido"  remote="oe" path="poky/meta-openembedded" />
-  <project name="meta-gumstix" revision="refs/heads/next"  remote="gumstix" path="poky/meta-gumstix" />
-  <project name="meta-gumstix-extras" revision="refs/heads/next" remote="gumstix" path="poky/meta-gumstix-extras" />
-  <project name="meta-ti" revision="refs/heads/fido"  remote="yocto" path="poky/meta-ti" />
-  <project name="meta-ros" revision="refs/heads/master"  remote="bmwcarit" path="poky/meta-ros" />
-  <project name="meta-java" revision="refs/heads/master"  remote="yocto" path="poky/meta-java" />
-  <project name="meta-qt5" revision="refs/heads/fido"  remote="qt5" path="poky/meta-qt5" />
-
+  <project name="meta-neutrino" path="poky/meta-neutrino" revision="refs/heads/master" upstream="refs/heads/master"/>
+  <project name="meta-coolstream" path="poky/meta-coolstream" revision="refs/heads/master" upstream="refs/heads/master"/>
+  <project name="poky" remote="yocto" revision="refs/heads/jethro" upstream="refs/heads/jethro"/>
 </manifest>
 
