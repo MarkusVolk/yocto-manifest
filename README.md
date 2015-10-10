@@ -1,17 +1,17 @@
-Gumstix Repo Manifests for the Yocto Project Build System
+Neutrino-hd Repo Manifests for the Yocto Project Build System
 =============================================
 This repository provides Repo manifests to setup the Yocto build system for 
-supported Gumstix products.
+supported Coolstream products.
 
 ***
 **Note:**
-If you already have a Yocto Project setup and want only the Gumstix BSP layer, 
-use the meta-gumstix repository found here: 
-git://github.com/gumstix/meta-gumstix.git.
+If you already have a Yocto Project setup and want only one BSP layer, 
+use the repositories found here: 
+git://github.com/neutrino-hd/
 ***
 
 The Yocto Project allows the creation of custom linux distributions for embedded
-systems, including Gumstix-based systems.  It is a collection of git
+systems, including coolstream-based systems.  It is a collection of git
 repositories known as *layers* each of which provides *recipes* to build
 software packages as well as configuration information.
 
@@ -50,7 +50,7 @@ Create an empty directory to hold your working files:
 
 Tell Repo where to find the manifest:
 
-    $ repo init -u git://github.com/gumstix/yocto-manifest.git 
+    $ repo init -u git://github.com/neutrino-hd/yocto-manifest.git 
 
 A successful initialization will end with a message stating that Repo is
 initialized in your working directory. Your directory should now
@@ -69,19 +69,19 @@ particular commits.
 
 To test out the bleeding edge, type:
 
-    $ repo init -u git://github.com/gumstix/yocto-manifest.git -b dev
+    $ repo init -u git://github.com/neutrino-hd/yocto-manifest.git -b dev
     $ repo sync
 
 To get back to the known stable version, type:
 
-    $ repo init -u git://github.com/gumstix/yocto-manifest.git -b master
+    $ repo init -u git://github.com/neutrino-hd/yocto-manifest.git -b master
     $ repo sync
 
 Also you can get a specific version of Yocto Project:
 
 For example,
 
-    $ repo init -u git://github.com/gumstix/yocto-manifest.git -b refs/tags/danny
+    $ repo init -u git://github.com/neutrino-hd/yocto-manifest.git -b refs/tags/fido
     
 To learn more about repo, look at http://source.android.com/source/version-control.html 
 ***
@@ -95,14 +95,14 @@ your connection.
 
 **4.  Initialize the Yocto Project Build Environment.**
 
-    $ export TEMPLATECONF=meta-gumstix-extras/conf 
+    $ export TEMPLATECONF=meta-coolstream/example 
     $ source ./poky/oe-init-build-env
 
 This copies default configuration information into the **poky/build/conf**
 directory and sets up some environment variables for the build system.  This configuration
 directory is not under revision control; you may wish to edit these configuration
 files for your specific setup. In particular, change the `MACHINE` variable in **conf/local.conf** if you are
-not building for the Overo (default).
+not building for kronos (default).
 
 **5.  Build an image:**
 
@@ -111,7 +111,7 @@ do an awful lot of compilation so make sure you have plenty of space (25GB
 minimum), and expect a day or so of build time depending on your network
 connection.  Don't worry---it is just the first build that takes a while.
 
-    $ bitbake gumstix-console-image
+    $ bitbake neutrino-image
 
 If everything goes well, you should have a compressed root filesystem
 tarball as well as kernel and bootloader binaries available in your
@@ -122,37 +122,6 @@ for the list of required packages for operating system. Also, take
 a look to be sure your operating system is supported:
 https://wiki.yoctoproject.org/wiki/Distribution_Support
 
-
-**6. Create a bootable micro SD card:**
-
-You are one step closer to booting your Gumstix with the new image you built! 
-Usually you have to create two partitions in your uSD: `boot` and `root`, and copy the bootloader and the root file system.
-Optionally you may want to create a swap partition.
-Yocto Project comes with a small utility called `wic` to help you out with this process.
-Here is a generic workflow using the Gumstix kickstart file:
-
-    $ wic create sdimage-gumstix -e gumstix-console-image
-
-    Info: The new image(s) can be found here:
-     /var/tmp/wic/build/sdimage-gumstix-201506231742-mmcblk.direct
-
-The kickstart file `sdimage-gumstix.wks` describes the layout of the storage. It is located here:
-
-    meta-gumstix-extras/scripts/lib/image/canned-wks/
-
-By default, it creates a DD-able image (`.direct`) with boot, root and swap partitions. It fits into a 2GB large uSD card.
-You can tweak the size parameter (--size) in the kickstart file to match the size of the image to your micro-SD card.
-
-**7. Flash your image:**
-
-Note that your uSD will have to be at least 2GB large. Pop in your micro SD card to your card writer, and find out the location of
-the block device by running `dmesg`. Now you can run the script as following:
-
-    $ sudo dd if=/var/tmp/wic/build/sdimage-gumstix-201506231742-mmcblk.direct of=/dev/sdb
-
-If you get an error due to the size of the image being bigger than the uSD card, adjust the size parameter (`--size`) in the kickstart file.
-
-Hooray you are done!
 
 Staying Up to Date
 ------------------
@@ -170,7 +139,7 @@ Enter the Yocto Project build environment:
 
 You can then rebuild as before:
 
-    $ bitbake gumstix-console-image
+    $ bitbake neutrino-image
 
 Starting Fresh
 -------------------
@@ -212,7 +181,7 @@ repositories and branches or pull in additional meta-layers.
 
 Clone this repository (or fork it on github):
 
-    $ git clone git://github.com/gumstix/yocto-manifest.git
+    $ git clone git://github.com/neutrino-hd/yocto-manifest.git
 
 Make your changes (and contribute them back if they are generally useful), and
 then re-initialize your repo client
@@ -222,4 +191,4 @@ then re-initialize your repo client
 
 Additional Resources
 --------------------
-Please checkout [Gumstix Yocto Project Wiki](https://github.com/gumstix/yocto-manifest/wiki) for tips on building and using the Gumstix images.
+This Repo was forked from https://github.com/gumstix/yocto-manifest
