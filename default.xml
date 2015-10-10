@@ -11,8 +11,8 @@
        "remote": the remote host from above (if not the default)
        "revision": commitish to checkout (if not the default)
        "path": directory where git repository gets cloned/synced -->
-  <project name="meta-neutrino" path="poky/meta-neutrino" revision="refs/heads/master" upstream="refs/heads/master"/>
-  <project name="meta-coolstream" path="poky/meta-coolstream" revision="refs/heads/master" upstream="refs/heads/master"/>
-  <project name="poky" remote="yocto" revision="refs/heads/jethro" upstream="refs/heads/jethro"/>
+  <project name="meta-neutrino" path="poky/meta-neutrino" revision="refs/heads/fido" upstream="refs/heads/fido"/>
+  <project name="meta-coolstream" path="poky/meta-coolstream" revision="refs/heads/fido" upstream="refs/heads/fido"/>
+  <project name="poky" remote="yocto" revision="refs/heads/fido" upstream="refs/heads/fido"/>
 </manifest>
 
