@@ -98,7 +98,7 @@ your connection.
     $ export TEMPLATECONF=meta-coolstream/example 
     $ source ./poky/oe-init-build-env
 
-This copies default configuration information into the **poky/build/conf**
+This copies default configuration information into the **build/conf**
 directory and sets up some environment variables for the build system.  This configuration
 directory is not under revision control; you may wish to edit these configuration
 files for your specific setup. In particular, change the `MACHINE` variable in **conf/local.conf** if you are
@@ -114,8 +114,8 @@ connection.  Don't worry---it is just the first build that takes a while.
     $ bitbake neutrino-image
 
 If everything goes well, you should have a compressed root filesystem
-tarball as well as kernel and bootloader binaries available in your
-**tmp/deploy/images/{ overo | duovero | pepper }** directory.  If you run into problems, the most likely
+tarball as well as a kernel binary available in your
+**tmp/deploy/images/{ coolstream-hd1 | coolstream-hd2 }** directory.  If you run into problems, the most likely
 candidate is missing software packages.  Check out
 http://www.yoctoproject.org/docs/current/yocto-project-qs/yocto-project-qs.html#resources
 for the list of required packages for operating system. Also, take
