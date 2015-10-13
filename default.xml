@@ -5,14 +5,14 @@
   <remote fetch="git://git.openembedded.org" name="oe"/>
   <remote fetch="git://git.yoctoproject.org" name="yocto"/>
 
-  <default remote="neutrino-hd" revision="master"/>
+  <default remote="neutrino-hd" revision="default"/>
   <!-- List all the repositories you want to fetch -->
   <!-- "name": git repository's name on hosting server
        "remote": the remote host from above (if not the default)
        "revision": commitish to checkout (if not the default)
        "path": directory where git repository gets cloned/synced -->
-  <project name="meta-neutrino" path="poky/meta-neutrino" revision="master" upstream="master"/>
-  <project name="meta-coolstream" path="poky/meta-coolstream" revision="master" upstream="master"/>
-  <project name="poky" remote="yocto" revision="jethro" upstream="jethro"/>
+  <project name="meta-neutrino" path="poky/meta-neutrino" revision="master" upstream="refs/heads/master"/>
+  <project name="meta-coolstream" path="poky/meta-coolstream" revision="master" upstream="refs/heads/master"/>
+  <project name="poky" remote="yocto" revision="jethro" upstream="refs/heads/jethro"/>
 </manifest>
 
